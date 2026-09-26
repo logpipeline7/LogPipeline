@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://logpipeline.dev"),
+  metadataBase: new URL("https://logpipeline.pages.dev"),
   title: {
     default: "LogPipeline | Log Extraction Regex Architect & Multi-Collector Generator",
     template: "%s | LogPipeline",
@@ -33,17 +33,17 @@ export const metadata: Metadata = {
     "alb access log parser",
     "nginx log regex",
   ],
-  authors: [{ name: "LogPipeline Engineering Team", url: "https://logpipeline.dev" }],
+  authors: [{ name: "LogPipeline Engineering Team", url: "https://logpipeline.pages.dev" }],
   creator: "LogPipeline",
   publisher: "LogPipeline",
   alternates: {
-    canonical: "https://logpipeline.dev",
+    canonical: "https://logpipeline.pages.dev",
   },
   openGraph: {
     title: "LogPipeline | Log Extraction Regex Architect & Multi-Collector Generator",
     description:
       "Interactive in-browser log parser and regex architect for DevOps & SREs. Test Grok patterns with live AST token highlights and export to Fluent Bit, Vector, Datadog, and Logstash.",
-    url: "https://logpipeline.dev",
+    url: "https://logpipeline.pages.dev",
     siteName: "LogPipeline",
     type: "website",
     locale: "en_US",

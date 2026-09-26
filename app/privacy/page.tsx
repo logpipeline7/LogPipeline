@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "LogPipeline Privacy Policy. Zero server transmission architecture: all log parsing, Grok transpilation, and regex benchmarking occur 100% in your local browser.",
   alternates: {
-    canonical: "https://logpipeline.dev/privacy",
+    canonical: "https://logpipeline.pages.dev/privacy",
   },
 };
 

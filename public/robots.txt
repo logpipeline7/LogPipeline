@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://logpipeline.dev/sitemap.xml
+Sitemap: https://logpipeline.pages.dev/sitemap.xml

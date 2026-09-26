@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Contact LogPipeline engineering for support, bug reports, feature suggestions, or developer sponsorship opportunities.",
   alternates: {
-    canonical: "https://logpipeline.dev/contact",
+    canonical: "https://logpipeline.pages.dev/contact",
   },
 };
 

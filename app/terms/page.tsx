@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "LogPipeline Terms of Service. Understand terms of use, client-side execution parameters, and warranty disclaimers for generated log parsing configurations.",
   alternates: {
-    canonical: "https://logpipeline.dev/terms",
+    canonical: "https://logpipeline.pages.dev/terms",
   },
 };
 

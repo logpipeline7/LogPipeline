@@ -1,337 +1,337 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://logpipeline.dev</loc>
+    <loc>https://logpipeline.pages.dev</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/directory</loc>
+    <loc>https://logpipeline.pages.dev/directory</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/about</loc>
+    <loc>https://logpipeline.pages.dev/about</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/contact</loc>
+    <loc>https://logpipeline.pages.dev/contact</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/privacy</loc>
+    <loc>https://logpipeline.pages.dev/privacy</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/terms</loc>
+    <loc>https://logpipeline.pages.dev/terms</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-alb-access-logs</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-alb-access-logs</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-cloudfront-standard</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-cloudfront-standard</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-vpc-flow-logs</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-vpc-flow-logs</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-cloudwatch-json</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-cloudwatch-json</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-waf-traffic-logs</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-waf-traffic-logs</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-s3-access-logs</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-s3-access-logs</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-ecs-task-logs</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-ecs-task-logs</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-lambda-logs</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-lambda-logs</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-api-gateway-execution</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-api-gateway-execution</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/aws/aws-route53-dns-queries</loc>
+    <loc>https://logpipeline.pages.dev/parser/aws/aws-route53-dns-queries</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/nginx-ingress-controller</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/nginx-ingress-controller</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/apache-combined</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/apache-combined</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/caddy-structured-json</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/caddy-structured-json</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/envoy-proxy-access</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/envoy-proxy-access</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/traefik-access-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/traefik-access-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/kong-api-gateway</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/kong-api-gateway</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/haproxy-http-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/haproxy-http-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/squid-proxy-access</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/squid-proxy-access</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/web/nginx-error-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/web/nginx-error-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/databases/postgres-slow-query</loc>
+    <loc>https://logpipeline.pages.dev/parser/databases/postgres-slow-query</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/databases/mysql-error-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/databases/mysql-error-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/databases/mongodb-diagnostic-json</loc>
+    <loc>https://logpipeline.pages.dev/parser/databases/mongodb-diagnostic-json</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/databases/redis-slowlog</loc>
+    <loc>https://logpipeline.pages.dev/parser/databases/redis-slowlog</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/databases/cassandra-system-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/databases/cassandra-system-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/databases/elasticsearch-cluster-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/databases/elasticsearch-cluster-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/databases/clickhouse-server-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/databases/clickhouse-server-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/databases/cockroachdb-sql-audit</loc>
+    <loc>https://logpipeline.pages.dev/parser/databases/cockroachdb-sql-audit</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/containers/containerd-cri-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/containers/containerd-cri-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/containers/docker-json-file</loc>
+    <loc>https://logpipeline.pages.dev/parser/containers/docker-json-file</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/containers/kubernetes-api-audit</loc>
+    <loc>https://logpipeline.pages.dev/parser/containers/kubernetes-api-audit</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/containers/coredns-query-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/containers/coredns-query-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/containers/kubelet-system-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/containers/kubelet-system-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/containers/calico-cni-traffic</loc>
+    <loc>https://logpipeline.pages.dev/parser/containers/calico-cni-traffic</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/containers/kubernetes-event-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/containers/kubernetes-event-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/runtimes/spring-boot-multiline</loc>
+    <loc>https://logpipeline.pages.dev/parser/runtimes/spring-boot-multiline</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/runtimes/gunicorn-access-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/runtimes/gunicorn-access-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/runtimes/go-logrus-json</loc>
+    <loc>https://logpipeline.pages.dev/parser/runtimes/go-logrus-json</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/runtimes/django-request-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/runtimes/django-request-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/runtimes/node-bunyan-json</loc>
+    <loc>https://logpipeline.pages.dev/parser/runtimes/node-bunyan-json</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/runtimes/rails-production-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/runtimes/rails-production-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/runtimes/rust-tracing-json</loc>
+    <loc>https://logpipeline.pages.dev/parser/runtimes/rust-tracing-json</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/runtimes/aspnet-core-kestrel</loc>
+    <loc>https://logpipeline.pages.dev/parser/runtimes/aspnet-core-kestrel</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/security/syslog-rfc5424-strict</loc>
+    <loc>https://logpipeline.pages.dev/parser/security/syslog-rfc5424-strict</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/security/syslog-rfc3164-bsd</loc>
+    <loc>https://logpipeline.pages.dev/parser/security/syslog-rfc3164-bsd</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/security/palo-alto-panos-traffic</loc>
+    <loc>https://logpipeline.pages.dev/parser/security/palo-alto-panos-traffic</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/security/fortinet-fortigate-traffic</loc>
+    <loc>https://logpipeline.pages.dev/parser/security/fortinet-fortigate-traffic</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/security/cisco-asa-firewall</loc>
+    <loc>https://logpipeline.pages.dev/parser/security/cisco-asa-firewall</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/security/suricata-eve-json</loc>
+    <loc>https://logpipeline.pages.dev/parser/security/suricata-eve-json</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/security/zeek-conn-log</loc>
+    <loc>https://logpipeline.pages.dev/parser/security/zeek-conn-log</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logpipeline.dev/parser/security/linux-auth-secure</loc>
+    <loc>https://logpipeline.pages.dev/parser/security/linux-auth-secure</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

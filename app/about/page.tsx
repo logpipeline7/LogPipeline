@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Learn about LogPipeline's engineering mission: zero-overhead client-side log parsing, Web Worker regex tokenization, and multi-collector configuration transpilation.",
   alternates: {
-    canonical: "https://logpipeline.dev/about",
+    canonical: "https://logpipeline.pages.dev/about",
   },
 };
 

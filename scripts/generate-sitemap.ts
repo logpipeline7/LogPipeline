@@ -6,7 +6,7 @@ interface TemplateStub {
   category: string;
 }
 
-const BASE_URL = "https://logpipeline.dev";
+const BASE_URL = "https://logpipeline.pages.dev";
 const TEMPLATES_FILE = path.join(process.cwd(), "data", "templates.json");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 

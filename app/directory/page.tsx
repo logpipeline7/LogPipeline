@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   description:
     "Comprehensive catalog of 50 production-verified log templates across AWS Cloud, NGINX, Envoy, PostgreSQL, Kafka, Kubernetes, and Palo Alto. Live regex debugging and instant multi-collector configuration export.",
   alternates: {
-    canonical: "https://logpipeline.dev/directory",
+    canonical: "https://logpipeline.pages.dev/directory",
   },
   openGraph: {
     title: "50 Production Log Templates & Grok Parsers Directory | LogPipeline",
     description:
       "Explore 50 production-verified log parser templates with live in-browser regex transpilation and configuration export for Fluent Bit, Vector VRL, Datadog, Logstash, and OpenTelemetry.",
-    url: "https://logpipeline.dev/directory",
+    url: "https://logpipeline.pages.dev/directory",
     siteName: "LogPipeline",
     type: "website",
   },
@@ -49,7 +49,7 @@ export default function DirectoryPage() {
       position: idx + 1,
       name: template.title,
       description: template.metaDescription,
-      url: `https://logpipeline.dev/parser/${template.category}/${template.slug}`,
+      url: `https://logpipeline.pages.dev/parser/${template.category}/${template.slug}`,
     })),
   };
 

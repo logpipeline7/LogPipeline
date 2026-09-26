@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const categoryName = CATEGORY_LABELS[template.category] || template.category;
   const pageTitle = `${template.title} | Regex & Collector Exporter | LogPipeline`;
   const pageDesc = `${template.metaDescription} Test Grok regex in-browser and generate verified configs for Fluent Bit, Vector VRL, Datadog, Logstash, and OpenTelemetry.`;
-  const canonicalUrl = `https://logpipeline.dev/parser/${template.category}/${template.slug}`;
+  const canonicalUrl = `https://logpipeline.pages.dev/parser/${template.category}/${template.slug}`;
 
   return {
     title: pageTitle,
@@ -137,16 +137,16 @@ export default async function TemplatePage({ params }: PageProps) {
     author: {
       "@type": "Organization",
       name: "LogPipeline Core Engineering",
-      url: "https://logpipeline.dev",
+      url: "https://logpipeline.pages.dev",
     },
     publisher: {
       "@type": "Organization",
       name: "LogPipeline",
-      url: "https://logpipeline.dev",
+      url: "https://logpipeline.pages.dev",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://logpipeline.dev/parser/${template.category}/${template.slug}`,
+      "@id": `https://logpipeline.pages.dev/parser/${template.category}/${template.slug}`,
     },
   };
 
@@ -156,7 +156,7 @@ export default async function TemplatePage({ params }: PageProps) {
     name: `${template.title} In-Browser Debugger`,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "All (Web Browser)",
-    url: `https://logpipeline.dev/parser/${template.category}/${template.slug}`,
+    url: `https://logpipeline.pages.dev/parser/${template.category}/${template.slug}`,
     description: template.metaDescription,
     offers: {
       "@type": "Offer",
@@ -173,25 +173,25 @@ export default async function TemplatePage({ params }: PageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://logpipeline.dev",
+        item: "https://logpipeline.pages.dev",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Templates Directory",
-        item: "https://logpipeline.dev/directory",
+        item: "https://logpipeline.pages.dev/directory",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: catLabel,
-        item: `https://logpipeline.dev/directory?category=${template.category}`,
+        item: `https://logpipeline.pages.dev/directory?category=${template.category}`,
       },
       {
         "@type": "ListItem",
         position: 4,
         name: template.title,
-        item: `https://logpipeline.dev/parser/${template.category}/${template.slug}`,
+        item: `https://logpipeline.pages.dev/parser/${template.category}/${template.slug}`,
       },
     ],
   };
