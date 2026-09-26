@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -28,6 +29,22 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
+      <head>
+        {/* Google Publisher Tag (GPT) Script */}
+        <Script
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          strategy="afterInteractive"
+        />
+        <Script id="gpt-init" strategy="afterInteractive">
+          {`
+            window.googletag = window.googletag || { cmd: [] };
+            window.googletag.cmd.push(function() {
+              window.googletag.pubads().enableSingleRequest();
+              window.googletag.enableServices();
+            });
+          `}
+        </Script>
+      </head>
       <body className="min-h-full bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
         {children}
       </body>

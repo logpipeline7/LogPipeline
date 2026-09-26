@@ -19,6 +19,8 @@ import {
 } from "../../../../lib/engine/exporters";
 import { TemplateWorkbench } from "../../../../components/TemplateWorkbench";
 import { TopNavigation } from "../../../../components/TopNavigation";
+import { AdSlot } from "../../../../components/ads/AdSlot";
+import { StickyBottomAnchor } from "../../../../components/ads/StickyBottomAnchor";
 import {
   ChevronRight,
   ShieldCheck,
@@ -207,7 +209,19 @@ export default async function TemplatePage({ params }: PageProps) {
 
       <TopNavigation />
 
-      <main className="flex-1 flex flex-col p-4 md:p-6 lg:p-8 max-w-[1720px] w-full mx-auto gap-8">
+      {/* 3-Column Layout Container for Ultra-Wide Displays */}
+      <div className="flex-1 w-full max-w-[1880px] mx-auto flex items-start justify-center gap-4 p-2 sm:p-4">
+        {/* Left Sticky Sidebar Ad (300x600 Desktop) */}
+        <aside className="hidden 2xl:block sticky top-20 flex-shrink-0">
+          <AdSlot
+            slotId="sidebar-left"
+            category={template.category}
+            slug={template.slug}
+          />
+        </aside>
+
+        {/* Central Content Column */}
+        <main className="flex-1 flex flex-col p-2 md:p-4 lg:p-6 max-w-[1440px] w-full min-w-0 gap-8">
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumb"
@@ -283,6 +297,15 @@ export default async function TemplatePage({ params }: PageProps) {
             templateCategory={template.category}
           />
         </section>
+
+        {/* Mid-Content Leaderboard Ad (728x90 / 970x90) */}
+        <div className="w-full flex justify-center my-2 py-2">
+          <AdSlot
+            slotId="mid-content"
+            category={template.category}
+            slug={template.slug}
+          />
+        </div>
 
         {/* Deep Technical Documentation & E-E-A-T Content (600+ words) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-6 border-t border-slate-800/80">
@@ -568,6 +591,22 @@ export default async function TemplatePage({ params }: PageProps) {
           </aside>
         </div>
       </main>
+
+      {/* Right Sticky Sidebar Ad (300x600 Desktop) */}
+      <aside className="hidden xl:block sticky top-20 flex-shrink-0">
+        <AdSlot
+          slotId="sidebar-right"
+          category={template.category}
+          slug={template.slug}
+        />
+      </aside>
     </div>
+
+    {/* Sticky Bottom Anchor Ad */}
+    <StickyBottomAnchor
+      category={template.category}
+      slug={template.slug}
+    />
+  </div>
   );
 }
