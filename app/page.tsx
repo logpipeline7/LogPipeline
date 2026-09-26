@@ -37,7 +37,7 @@ export default function Home() {
   const transpiledRegex = output?.transpiledRegex || transpileResult.regexString || "";
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 pb-16">
+    <div className="flex flex-col min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 pb-28">
       {/* Top Navigation Bar */}
       <TopNavigation
         selectedPresetId={selectedPresetId}
@@ -46,7 +46,7 @@ export default function Home() {
       />
 
       {/* Main Container with 3-Column Layout on Ultra-Wide Monitors */}
-      <div className="flex-1 w-full max-w-[1880px] mx-auto flex items-start justify-center gap-4 p-2 sm:p-4">
+      <div className="flex-1 w-full max-w-[1880px] mx-auto flex items-start justify-center gap-6 p-2 sm:p-4">
         {/* Left Sticky Sidebar Ad (300x600 Desktop) */}
         <aside className="hidden 2xl:block sticky top-20 flex-shrink-0">
           <AdSlot slotId="sidebar-left" />
@@ -119,7 +119,7 @@ export default function Home() {
         </main>
 
         {/* Right Sticky Sidebar Ad (300x600 Desktop) */}
-        <aside className="hidden xl:block sticky top-20 flex-shrink-0">
+        <aside className="hidden xl:block sticky top-20 flex-shrink-0 ml-4">
           <AdSlot slotId="sidebar-right" />
         </aside>
       </div>

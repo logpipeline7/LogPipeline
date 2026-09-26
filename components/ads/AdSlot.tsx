@@ -141,7 +141,7 @@ export function AdSlot({
         // Standard Display Ad Container with Micro-Label
         <div className="w-full h-full flex flex-col items-center justify-center bg-slate-950/40 border border-slate-800/60 rounded-xl p-2 relative overflow-hidden">
           {/* Micro Caption */}
-          <div className="w-full flex items-center justify-between pb-1.5 px-1 border-b border-slate-800/40 mb-2">
+          <div className="w-full flex items-center justify-between pb-1.5 px-2 border-b border-slate-800/40 mb-2">
             <span className="text-[9px] font-mono uppercase tracking-wider text-slate-500">
               Advertisement
             </span>

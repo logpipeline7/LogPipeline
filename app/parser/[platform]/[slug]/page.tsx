@@ -197,7 +197,7 @@ export default async function TemplatePage({ params }: PageProps) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="flex flex-col min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 pb-28">
       {/* Schema.org Structured Data */}
       <script
         type="application/ld+json"
@@ -215,7 +215,7 @@ export default async function TemplatePage({ params }: PageProps) {
       <TopNavigation />
 
       {/* 3-Column Layout Container for Ultra-Wide Displays */}
-      <div className="flex-1 w-full max-w-[1880px] mx-auto flex items-start justify-center gap-4 p-2 sm:p-4">
+      <div className="flex-1 w-full max-w-[1880px] mx-auto flex items-start justify-center gap-6 p-2 sm:p-4">
         {/* Left Sticky Sidebar Ad (300x600 Desktop) */}
         <aside className="hidden 2xl:block sticky top-20 flex-shrink-0">
           <AdSlot
@@ -610,7 +610,7 @@ export default async function TemplatePage({ params }: PageProps) {
       </main>
 
       {/* Right Sticky Sidebar Ad (300x600 Desktop) */}
-      <aside className="hidden xl:block sticky top-20 flex-shrink-0">
+      <aside className="hidden xl:block sticky top-20 flex-shrink-0 ml-4">
         <AdSlot
           slotId="sidebar-right"
           category={template.category}

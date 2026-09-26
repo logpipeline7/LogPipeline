@@ -43,7 +43,7 @@ export function StickyBottomAnchor({
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 shadow-2xl py-2 px-3 transition-transform duration-300">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur border-t border-slate-800 shadow-2xl py-2 px-3 transition-transform duration-300">
       <div className="max-w-[1200px] mx-auto flex items-center justify-between gap-3 relative">
         {/* Ad Container */}
         <div className="flex-1 flex justify-center items-center">
