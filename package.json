@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "tsx scripts/generate-sitemap.ts",
-    "build": "next build",
+    "build": "tsx scripts/generate-sitemap.ts && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "tsx lib/engine/__tests__/transpiler.test.ts && tsx lib/engine/exporters/__tests__/exporters.test.ts && tsx lib/ads/__tests__/ads.test.ts"

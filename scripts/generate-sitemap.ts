@@ -135,6 +135,14 @@ function generateSitemap() {
   const robotsPath = path.join(PUBLIC_DIR, "robots.txt");
   fs.writeFileSync(robotsPath, robotsContent, "utf-8");
   console.log(`[Robots] Generated robots.txt at ${robotsPath}`);
+
+  // Also sync directly to out/ if static export directory already exists
+  const OUT_DIR = path.join(process.cwd(), "out");
+  if (fs.existsSync(OUT_DIR)) {
+    fs.writeFileSync(path.join(OUT_DIR, "sitemap.xml"), xmlContent, "utf-8");
+    fs.writeFileSync(path.join(OUT_DIR, "robots.txt"), robotsContent, "utf-8");
+    console.log(`[Sitemap] Synced sitemap.xml and robots.txt to ${OUT_DIR}`);
+  }
 }
 
 generateSitemap();
