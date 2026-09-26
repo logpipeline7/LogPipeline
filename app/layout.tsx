@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       "Interactive in-browser log parser and regex architect for DevOps & SREs. Test Grok patterns with live AST token highlights and export to Fluent Bit, Vector, Datadog, and Logstash.",
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || "",
+    google: "Qt6fnk3kgvaJ81WRUDNXbZ03sBCV3N_5Vh5uZC3lh4s",
   },
   icons: {
     icon: "/favicon.ico",
