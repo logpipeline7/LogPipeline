@@ -13,13 +13,14 @@ export function generateLogstashConfig(input: ExporterInput): string {
   );
 
   const timeKey = timeField ? timeField.name : "timestamp";
+  const escapedPattern = pattern.replace(/"/g, '\\"');
 
   return `# ==============================================================================
 # Logstash Pipeline Configuration (/etc/logstash/conf.d/logpipeline.conf)
 # ==============================================================================
 filter {
   grok {
-    match => { "message" => "${pattern}" }
+    match => { "message" => "${escapedPattern}" }
     tag_on_failure => [ "_grokparsefailure" ]
   }
 

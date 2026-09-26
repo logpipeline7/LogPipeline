@@ -14,6 +14,9 @@ export function generateOtelConfig(input: ExporterInput): string {
 
   const timeKey = timeField ? timeField.name : "timestamp";
 
+  const singleQuoteRegex = compiledRegex.replace(/'/g, "''");
+  const doubleQuoteRegex = compiledRegex.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+
   return `# ==============================================================================
 # OpenTelemetry Collector Configuration (otel-collector-config.yaml)
 # Option 1: Filelog Receiver with regex_parser Operator
@@ -25,7 +28,7 @@ receivers:
     operators:
       - type: regex_parser
         id: logpipeline_regex_parser
-        regex: '^${compiledRegex}$'
+        regex: '^${singleQuoteRegex}$'
         timestamp:
           parse_from: attributes.${timeKey}
           layout: '%Y-%m-%dT%H:%M:%S%z'
@@ -39,7 +42,7 @@ processors:
     log_statements:
       - context: log
         statements:
-          - merge_maps(attributes, extract_patterns(body, "^${compiledRegex}$"), "insert")
+          - merge_maps(attributes, extract_patterns(body, "^${doubleQuoteRegex}$"), "insert")
 
 service:
   pipelines:

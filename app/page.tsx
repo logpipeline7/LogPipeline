@@ -9,6 +9,7 @@ import { OutputViewer } from "../components/OutputViewer";
 import { transpilePattern } from "../lib/engine/transpiler";
 import { AdSlot } from "../components/ads/AdSlot";
 import { StickyBottomAnchor } from "../components/ads/StickyBottomAnchor";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   const {
@@ -122,6 +123,9 @@ export default function Home() {
           <AdSlot slotId="sidebar-right" />
         </aside>
       </div>
+
+      {/* Footer */}
+      <Footer />
 
       {/* Sticky Bottom Anchor Ad */}
       <StickyBottomAnchor />

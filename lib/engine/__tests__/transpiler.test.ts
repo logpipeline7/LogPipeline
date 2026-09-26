@@ -71,3 +71,51 @@ test("returns structured error on unknown pattern", () => {
   assert.ok(result.error);
   assert.ok(result.error.message.includes("NON_EXISTENT_MACRO"));
 });
+
+test("accurately matches %{WORD:w}, %{NOTSPACE:ns}, and %{LOGLEVEL:lvl}", () => {
+  const result = transpilePattern("%{LOGLEVEL:lvl} %{WORD:action} %{NOTSPACE:path}");
+  assert.equal(result.success, true);
+  assert.ok(result.regExp);
+
+  const sample = "INFO user_login /api/v1/session?token=abc";
+  const match = result.regExp.exec(sample);
+  assert.ok(match, "Sample log line must match");
+  assert.equal(match.groups?.lvl, "INFO");
+  assert.equal(match.groups?.action, "user_login");
+  assert.equal(match.groups?.path, "/api/v1/session?token=abc");
+
+  // Verify POSINT and NONNEGINT
+  const numResult = transpilePattern("%{POSINT:port} %{NONNEGINT:retries}");
+  assert.equal(numResult.success, true);
+  const numMatch = numResult.regExp!.exec("8080 0");
+  assert.ok(numMatch);
+  assert.equal(numMatch.groups?.port, "8080");
+  assert.equal(numMatch.groups?.retries, "0");
+});
+
+test("sanitizes hyphenated group names to valid identifiers (e.g. client-ip -> client_ip)", () => {
+  const result = transpilePattern("%{IP:client-ip} %{INT:status-code}");
+  assert.equal(result.success, true);
+  assert.ok(result.regExp);
+  assert.equal(result.fields[0].name, "client_ip");
+  assert.equal(result.fields[1].name, "status_code");
+
+  const sample = "192.168.1.1 200";
+  const match = result.regExp.exec(sample);
+  assert.ok(match);
+  assert.equal(match.groups?.client_ip, "192.168.1.1");
+  assert.equal(match.groups?.status_code, "200");
+});
+
+test("enforces recursion depth limit against deeply nested custom macros", () => {
+  const deepCustomPatterns: Record<string, string> = {};
+  for (let i = 0; i < 15; i++) {
+    deepCustomPatterns[`MACRO_${i}`] = `%{MACRO_${i + 1}}`;
+  }
+  deepCustomPatterns["MACRO_15"] = "[0-9]+";
+
+  const result = transpilePattern("%{MACRO_0:val}", deepCustomPatterns);
+  assert.equal(result.success, false);
+  assert.ok(result.error);
+  assert.ok(result.error.message.includes("Maximum recursion depth"));
+});

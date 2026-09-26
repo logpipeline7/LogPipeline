@@ -33,19 +33,19 @@ export const CORE_PATTERNS: Record<string, PatternDefinition> = {
   POSINT: {
     name: "POSINT",
     category: "base",
-    pattern: `\b(?:[1-9][0-9]*)\b`,
+    pattern: `\\b(?:[1-9][0-9]*)\\b`,
     description: "Positive integer greater than zero",
   },
   NONNEGINT: {
     name: "NONNEGINT",
     category: "base",
-    pattern: `\b(?:[0-9]+)\b`,
+    pattern: `\\b(?:[0-9]+)\\b`,
     description: "Non-negative integer (0 and above)",
   },
   BASE10NUM: {
     name: "BASE10NUM",
     category: "base",
-    pattern: `(?:[+-]?(?:[0-9]+(?:\.[0-9]+)?|\.[0-9]+))`,
+    pattern: `(?:[+-]?(?:[0-9]+(?:\\.[0-9]+)?|\\.[0-9]+))`,
     description: "Base-10 number including optional decimal and sign",
   },
   NUMBER: {
@@ -113,7 +113,7 @@ export const CORE_PATTERNS: Record<string, PatternDefinition> = {
   HOSTNAME: {
     name: "HOSTNAME",
     category: "network",
-    pattern: `\\b(?:[0-9A-Za-z][0-9A-Za-z-]{0,62})(?:\\.(?:[0-9A-Za-z][0-9A-Za-z-]{0,62}))*?(?:\\.?|\\b)`,
+    pattern: `\\b(?:[0-9A-Za-z][0-9A-Za-z-]{0,62})(?:\\.(?:[0-9A-Za-z][0-9A-Za-z-]{0,62}))*(?:\\.?|\\b)`,
     description: "Fully qualified domain name or single hostname",
   },
   IPORHOST: {

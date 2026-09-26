@@ -23,6 +23,7 @@ export class ActiveRefreshController {
   private lastActivityTimestamp = Date.now();
   private isWindowFocused = true;
   private isDocumentVisible = true;
+  private listenersAttached = false;
 
   private boundActivityHandler: () => void;
   private boundVisibilityHandler: () => void;
@@ -198,7 +199,8 @@ export class ActiveRefreshController {
   }
 
   private ensureGlobalListeners(): void {
-    if (typeof window === "undefined") return;
+    if (this.listenersAttached || typeof window === "undefined") return;
+    this.listenersAttached = true;
 
     const activityEvents = ["mousemove", "keydown", "scroll", "click", "touchstart"];
     activityEvents.forEach((evt) => {
@@ -211,7 +213,8 @@ export class ActiveRefreshController {
   }
 
   private teardownGlobalListeners(): void {
-    if (typeof window === "undefined") return;
+    if (!this.listenersAttached || typeof window === "undefined") return;
+    this.listenersAttached = false;
 
     const activityEvents = ["mousemove", "keydown", "scroll", "click", "touchstart"];
     activityEvents.forEach((evt) => {

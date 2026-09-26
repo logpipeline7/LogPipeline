@@ -6,6 +6,12 @@ import { ExporterInput } from "./types";
 export function generateDatadogConfig(input: ExporterInput): string {
   const { pattern, fields } = input;
 
+  // Datadog Grok match rules do not support type suffixes like :integer or :float
+  const datadogPattern = pattern.replace(
+    /%\{([A-Za-z0-9_]+):([A-Za-z0-9_-]+):([A-Za-z0-9_]+)\}/g,
+    "%{$1:$2}"
+  );
+
   const datadogPayload = {
     type: "grok-parser",
     name: "LogPipeline Grok Parser",
@@ -13,7 +19,7 @@ export function generateDatadogConfig(input: ExporterInput): string {
     source: "message",
     samples: [],
     grok: {
-      match_rules: `rule ${pattern}`,
+      match_rules: `rule ${datadogPattern}`,
       support_rules: "",
     },
   };
@@ -26,7 +32,7 @@ export function generateDatadogConfig(input: ExporterInput): string {
 # ==============================================================================
 
 # Match Rule:
-rule ${pattern}
+rule ${datadogPattern}
 
 # Complete Datadog Pipeline Processor JSON:
 ${jsonRepresentation}

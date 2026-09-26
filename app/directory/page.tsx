@@ -6,6 +6,7 @@ import {
 } from "../../lib/engine/templates";
 import { DirectoryClient } from "../../components/DirectoryClient";
 import { TopNavigation } from "../../components/TopNavigation";
+import { Footer } from "../../components/Footer";
 import {
   ChevronRight,
   BookOpen,
@@ -112,6 +113,8 @@ export default function DirectoryPage() {
         {/* Search, Filter, and Grid Interface */}
         <DirectoryClient initialTemplates={templates} categories={categories} />
       </main>
+
+      <Footer />
     </div>
   );
 }

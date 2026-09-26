@@ -56,7 +56,7 @@ export function B2BFallbackCard({ slotId, offerIndex }: B2BFallbackCardProps) {
               <span className="px-1.5 py-0.2 rounded text-[9px] font-mono bg-cyan-950/80 text-cyan-400 border border-cyan-800/60">
                 {offer.badge}
               </span>
-              <span className="text-[10px] text-slate-500 font-mono hidden md:inline">
+              <span className="text-[10px] text-slate-500 font-mono">
                 Sponsored
               </span>
             </div>

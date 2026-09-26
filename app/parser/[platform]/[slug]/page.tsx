@@ -21,6 +21,7 @@ import { TemplateWorkbench } from "../../../../components/TemplateWorkbench";
 import { TopNavigation } from "../../../../components/TopNavigation";
 import { AdSlot } from "../../../../components/ads/AdSlot";
 import { StickyBottomAnchor } from "../../../../components/ads/StickyBottomAnchor";
+import { Footer } from "../../../../components/Footer";
 import {
   ChevronRight,
   ShieldCheck,
@@ -129,6 +130,8 @@ export default async function TemplatePage({ params }: PageProps) {
     headline: template.title,
     description: template.metaDescription,
     articleSection: catLabel,
+    datePublished: "2026-09-26",
+    dateModified: "2026-09-26",
     proficiencyLevel: "Intermediate",
     dependencies: "Fluent Bit, Vector.dev, Datadog Agent, Logstash, OpenTelemetry Collector",
     author: {
@@ -153,6 +156,8 @@ export default async function TemplatePage({ params }: PageProps) {
     name: `${template.title} In-Browser Debugger`,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "All (Web Browser)",
+    url: `https://logpipeline.dev/parser/${template.category}/${template.slug}`,
+    description: template.metaDescription,
     offers: {
       "@type": "Offer",
       price: "0.00",
@@ -322,24 +327,36 @@ export default async function TemplatePage({ params }: PageProps) {
 
               <div className="text-slate-300 text-sm leading-relaxed space-y-3">
                 <p>
-                  The <strong className="text-white font-semibold">{template.title}</strong> is a core telemetry
-                  stream utilized across enterprise production clusters. In distributed computing environments,
-                  unstructured or semi-structured log streams generate high ingestion overhead and elevated storage
-                  costs if not parsed into structured key-value schemas at the collection layer.
+                  The <strong className="text-white font-semibold">{template.title}</strong> is an essential telemetry
+                  stream within the <strong className="text-cyan-400">{catLabel}</strong> ecosystem. {template.metaDescription}
                 </p>
                 <p>
-                  Modern observability collectors such as <strong className="text-cyan-300">Fluent Bit</strong>,{" "}
-                  <strong className="text-cyan-300">Vector</strong>, and{" "}
-                  <strong className="text-cyan-300">OpenTelemetry Collector</strong> use regular expressions and
-                  named capture groups to parse tokens from raw byte streams before committing records to long-term
-                  storage engines like Elasticsearch, ClickHouse, Amazon S3, or Datadog.
+                  This schema defines a structure of{" "}
+                  <strong className="text-white font-semibold">{template.fields.length} extracted attributes</strong>,
+                  including{" "}
+                  <span className="text-amber-300 font-mono font-medium">
+                    {template.fields.filter((f) => f.type === "integer" || f.type === "float").length} numeric metrics
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-cyan-300 font-mono font-medium">
+                    {template.fields.filter((f) => f.type === "string").length} string dimensions
+                  </span>
+                  . In production observability architectures, these tokens provide high-cardinality indexing keys
+                  for telemetry pipelines before shipping to storage backends such as ClickHouse, Elasticsearch,
+                  Amazon S3, or Datadog.
                 </p>
-                <p>
-                  By transpiling Logstash-compatible Grok syntax into optimized standard PCRE/ECMAScript regular
-                  expressions, LogPipeline allows engineering teams to validate pattern accuracy, inspect capture group
-                  character indices, and generate platform-native parser configuration blocks without trial-and-error
-                  deployments.
-                </p>
+                <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-300 space-y-2">
+                  <div className="flex items-center gap-2 text-cyan-400 font-semibold font-mono">
+                    <Terminal className="w-4 h-4" />
+                    <span>Raw Telemetry Ingestion Profile</span>
+                  </div>
+                  <p className="text-slate-400 leading-relaxed">
+                    A typical raw event line for <span className="text-slate-200 font-mono">{template.slug}</span> averages{" "}
+                    <span className="text-cyan-300 font-mono font-semibold">{template.sampleLogs[0]?.length || 0} bytes</span> across{" "}
+                    <span className="text-slate-200 font-mono font-semibold">{template.fields.length} tokens</span>.
+                    Modern collectors such as Fluent Bit and Vector require zero-backtracking regular expressions to avoid CPU spikes during traffic surges.
+                  </p>
+                </div>
               </div>
             </article>
 
@@ -601,6 +618,9 @@ export default async function TemplatePage({ params }: PageProps) {
         />
       </aside>
     </div>
+
+    {/* Footer */}
+    <Footer />
 
     {/* Sticky Bottom Anchor Ad */}
     <StickyBottomAnchor

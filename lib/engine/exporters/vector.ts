@@ -26,11 +26,13 @@ export function generateVectorConfig(input: ExporterInput): string {
   const coercionBlock =
     coercions.length > 0 ? `\n    # Type coercions\n${coercions.join("\n")}\n` : "";
 
+  const escapedRegex = compiledRegex.replace(/'/g, "\\'");
+
   return `# ==============================================================================
 # Vector.dev Remap Language (VRL) Transform
 # Use inside a 'remap' transform in vector.yaml
 # ==============================================================================
-.parsed, err = parse_regex(.message, r'^${compiledRegex}$')
+.parsed, err = parse_regex(.message, r'^${escapedRegex}$')
 
 if err == null {
     . = merge(., .parsed)
@@ -48,7 +50,7 @@ transforms:
     type: remap
     inputs: ["source_logs"]
     source: |
-      .parsed, err = parse_regex(.message, r'^${compiledRegex}$')
+      .parsed, err = parse_regex(.message, r'^${escapedRegex}$')
       if err == null {
         . = merge(., .parsed)
         del(.parsed)

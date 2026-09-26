@@ -83,14 +83,23 @@ export function castValue(value: string | undefined, dataType: DataType): unknow
   }
 }
 
+const MAX_RECURSION_DEPTH = 10;
+
 /**
  * Recursively resolves a macro pattern down to pure base regular expression syntax.
  */
 export function resolveMacro(
   macroName: string,
   dictionary: Record<string, string>,
-  visited: Set<string> = new Set()
+  visited: Set<string> = new Set(),
+  depth: number = 0
 ): string {
+  if (depth > MAX_RECURSION_DEPTH) {
+    throw new Error(
+      `Maximum recursion depth (${MAX_RECURSION_DEPTH}) exceeded resolving %{${macroName}}`
+    );
+  }
+
   if (visited.has(macroName)) {
     throw new Error(
       `Circular macro reference detected: ${Array.from(visited).join(" -> ")} -> ${macroName}`
@@ -105,9 +114,9 @@ export function resolveMacro(
   visited.add(macroName);
 
   // Substitute any nested %{SUBMACRO} references inside definition
-  const nestedPatternRegex = /%\{([A-Za-z0-9_]+)(?::([A-Za-z0-9_]+))?(?::([A-Za-z0-9_]+))?\}/g;
+  const nestedPatternRegex = /%\{([A-Za-z0-9_]+)(?::([A-Za-z0-9_-]+))?(?::([A-Za-z0-9_]+))?\}/g;
   const resolved = raw.replace(nestedPatternRegex, (_match, subMacro) => {
-    const subResolved = resolveMacro(subMacro, dictionary, new Set(visited));
+    const subResolved = resolveMacro(subMacro, dictionary, new Set(visited), depth + 1);
     return `(?:${subResolved})`;
   });
 
@@ -147,7 +156,7 @@ export function transpilePattern(
   const seenGroupNames = new Set<string>();
 
   // Token scanner for %{PATTERN:field:type} or %{PATTERN:field} or %{PATTERN}
-  const grokTokenRegex = /%\{([A-Za-z0-9_]+)(?::([A-Za-z0-9_]+))?(?::([A-Za-z0-9_]+))?\}/g;
+  const grokTokenRegex = /%\{([A-Za-z0-9_]+)(?::([A-Za-z0-9_-]+))?(?::([A-Za-z0-9_]+))?\}/g;
 
   let lastIndex = 0;
   let transpiled = "";
@@ -197,7 +206,10 @@ export function transpilePattern(
       const matchStart = match.index;
       const matchLength = match[0].length;
       const macroName = match[1];
-      const fieldName = match[2];
+      const rawFieldName = match[2];
+      const fieldName = rawFieldName
+        ? (/^[0-9]/.test(rawFieldName) ? `_${rawFieldName}` : rawFieldName).replace(/[^a-zA-Z0-9_$]/g, "_")
+        : undefined;
       const typeStr = match[3];
 
       // Append text preceding the token

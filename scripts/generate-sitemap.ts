@@ -10,14 +10,42 @@ const BASE_URL = "https://logpipeline.dev";
 const TEMPLATES_FILE = path.join(process.cwd(), "data", "templates.json");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 
+function escapeXml(unsafe: string): string {
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case "&":
+        return "&amp;";
+      case "'":
+        return "&apos;";
+      case '"':
+        return "&quot;";
+      default:
+        return c;
+    }
+  });
+}
+
 function generateSitemap() {
   if (!fs.existsSync(PUBLIC_DIR)) {
     fs.mkdirSync(PUBLIC_DIR, { recursive: true });
   }
 
-  // Read templates
-  const rawData = fs.readFileSync(TEMPLATES_FILE, "utf-8");
-  const templates: TemplateStub[] = JSON.parse(rawData);
+  // Read templates safely
+  let templates: TemplateStub[] = [];
+  if (fs.existsSync(TEMPLATES_FILE)) {
+    try {
+      const rawData = fs.readFileSync(TEMPLATES_FILE, "utf-8");
+      templates = JSON.parse(rawData);
+    } catch (err) {
+      console.warn(`[Sitemap] Warning: Failed to parse ${TEMPLATES_FILE}:`, err);
+    }
+  } else {
+    console.warn(`[Sitemap] Warning: ${TEMPLATES_FILE} does not exist yet.`);
+  }
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -28,9 +56,10 @@ function generateSitemap() {
     priority: string;
   }
 
+  // Core canonical routes strictly matching layout metadataBase & canonical tags
   const urls: SitemapUrl[] = [
     {
-      loc: `${BASE_URL}/`,
+      loc: BASE_URL,
       lastmod: today,
       changefreq: "weekly",
       priority: "1.0",
@@ -41,11 +70,38 @@ function generateSitemap() {
       changefreq: "weekly",
       priority: "0.9",
     },
+    {
+      loc: `${BASE_URL}/about`,
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.7",
+    },
+    {
+      loc: `${BASE_URL}/contact`,
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.6",
+    },
+    {
+      loc: `${BASE_URL}/privacy`,
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.5",
+    },
+    {
+      loc: `${BASE_URL}/terms`,
+      lastmod: today,
+      changefreq: "monthly",
+      priority: "0.5",
+    },
   ];
 
+  // Programmatic 50 template routes
   for (const t of templates) {
+    const encodedCategory = encodeURIComponent(t.category);
+    const encodedSlug = encodeURIComponent(t.slug);
     urls.push({
-      loc: `${BASE_URL}/parser/${t.category}/${t.slug}`,
+      loc: `${BASE_URL}/parser/${encodedCategory}/${encodedSlug}`,
       lastmod: today,
       changefreq: "monthly",
       priority: "0.8",
@@ -58,7 +114,7 @@ function generateSitemap() {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...urls.map(
       (u) =>
-        `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
+        `  <url>\n    <loc>${escapeXml(u.loc)}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
     ),
     "</urlset>",
   ].join("\n");
