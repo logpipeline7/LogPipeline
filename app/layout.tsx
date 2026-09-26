@@ -14,9 +14,52 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LogPipeline | Log Extraction & Pipeline Architect",
+  metadataBase: new URL("https://logpipeline.dev"),
+  title: {
+    default: "LogPipeline | Log Extraction Regex Architect & Multi-Collector Generator",
+    template: "%s | LogPipeline",
+  },
   description:
-    "In-browser log parser, pattern debugger, and multi-collector config generator with live syntax token synchronization, ReDoS safety, and instant exports.",
+    "Interactive in-browser log parser and regex architect for DevOps & SREs. Test Grok patterns with live AST token highlights and export to Fluent Bit, Vector, Datadog, and Logstash.",
+  keywords: [
+    "log parser",
+    "grok debugger",
+    "logstash grok regex",
+    "fluent bit regex parser",
+    "vector vrl generator",
+    "datadog grok parser",
+    "opentelemetry regex parser",
+    "devops log pipeline",
+    "alb access log parser",
+    "nginx log regex",
+  ],
+  authors: [{ name: "LogPipeline Engineering Team", url: "https://logpipeline.dev" }],
+  creator: "LogPipeline",
+  publisher: "LogPipeline",
+  alternates: {
+    canonical: "https://logpipeline.dev",
+  },
+  openGraph: {
+    title: "LogPipeline | Log Extraction Regex Architect & Multi-Collector Generator",
+    description:
+      "Interactive in-browser log parser and regex architect for DevOps & SREs. Test Grok patterns with live AST token highlights and export to Fluent Bit, Vector, Datadog, and Logstash.",
+    url: "https://logpipeline.dev",
+    siteName: "LogPipeline",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LogPipeline | Log Extraction Regex Architect & Multi-Collector Generator",
+    description:
+      "Interactive in-browser log parser and regex architect for DevOps & SREs. Test Grok patterns with live AST token highlights and export to Fluent Bit, Vector, Datadog, and Logstash.",
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || "",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
